@@ -34,7 +34,9 @@ class UppercaseText(Resource):
         """
         text = request.args.get('text')
 
-        return jsonify({"text": text.upper()})
+        return "hey there, I'm here"
+
+        # return {"text": text.upper()}, 200
 
 api.add_resource(UppercaseText, "/uppercase")
 
