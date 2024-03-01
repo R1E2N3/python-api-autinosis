@@ -3,11 +3,13 @@ from flask_restful import Api, Resource
 import joblib
 import pandas as pd
 import sklearn
+from flask_cors import CORS
 
 print('hey there! I ran')
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 def processes_data(question, value):
     if question in ['A1', 'A2', 'A3', 'A4', 'A10', 'A5', 'A6', 'A7', 'A8', 'A9', 'A11', 'A12', 'A13']:
