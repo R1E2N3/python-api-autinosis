@@ -15,7 +15,7 @@ def processes_data(question, value):
     return value
 
 class PredictAdult(Resource):
-    def post(self):
+    def get(self):
         # Load the model
         model = joblib.load("adult.joblib")
 
