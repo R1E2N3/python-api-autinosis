@@ -5,3 +5,4 @@ pyairtable
 gunicorn
 joblib
 pandas
+scikit-learn
