@@ -4,6 +4,8 @@ import joblib
 import pandas as pd
 import sklearn
 
+print('hey there! I ran')
+
 app = Flask(__name__)
 api = Api(app)
 
