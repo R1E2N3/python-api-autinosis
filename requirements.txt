@@ -6,3 +6,4 @@ gunicorn
 joblib
 pandas
 scikit-learn
+flask-cors
