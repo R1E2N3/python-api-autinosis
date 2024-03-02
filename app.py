@@ -53,7 +53,7 @@ class PredictChild(Resource):
     def post(self):
         model = joblib.load('child.joblib')
 
-        if resquest.is_json:
+        if request.is_json:
             data = request.get_json()
 
             if all(key in data for key in ['Ethnicity', 'jundice', 'A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'Age']):
@@ -79,7 +79,7 @@ class PredictAdolescent(Resource):
     def post(self):
         model = joblib.load('adolescent.joblib')
 
-        if resquest.is_json:
+        if request.is_json:
             data = request.get_json()
 
             if all(key in data for key in ['Ethnicity', 'jundice', 'A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'Age']):
