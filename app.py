@@ -72,21 +72,17 @@ class PredictChild(Resource):
                 'Age_Mons': input_data['Age_Mons']
             })
 
-            if all(key in data for key in ['Ethnicity', 'Jaundice', 'A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'Age_Mons', 'ASD_Family']):
+            print(data)
                 # Perform data preprocessing
-                for key in data:
-                    data[key] = processes_data(key, data[key])
+            for key in data:
+                data[key] = processes_data(key, data[key])
 
                 # Perform prediction with the loaded model
-                input_data = pd.DataFrame([data])
-                prediction = model.predict_proba(input_data)[0][1]
-                pred = round(prediction * 100)
+            input_data = pd.DataFrame([data])
+            prediction = model.predict_proba(input_data)[0][1]
+            pred = round(prediction * 100)
 
-                return jsonify({"Result": pred})
-
-            else:
-                # If the JSON data does not contain the expected keys, return an error message
-                return jsonify({"error": "Invalid request format. Please provide all required fields."}), 400
+            return jsonify({"Result": pred})
         else:
             # If the request does not contain JSON data, return an error message
             return jsonify({"error": "Request must contain JSON data."}), 400
