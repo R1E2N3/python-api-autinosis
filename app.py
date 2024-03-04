@@ -54,23 +54,7 @@ class PredictChild(Resource):
         model = joblib.load('child.joblib')
 
         if request.is_json:
-            input_data = request.get_json()
-            data = pd.DataFrame({
-                "Ethnicity": input_data['Ethnicity'],
-                "Jaundice": input_data["Jaundice"],
-                'A1': input_data['A1'],
-                'A2': input_data['A2'],
-                'A3': input_data['A3'],
-                'A4': input_data['A4'],
-                'A5': input_data['A5'],
-                'A6': input_data['A6'],
-                'A7': input_data['A7'],
-                'A8': input_data['A8'],
-                'A9': input_data['A9'],
-                'A10': input_data['A10'],
-                'ASD_Family': input_data['ASD_Family'],
-                'Age_Mons': input_data['Age_Mons']
-            })
+            data = request.get_json()
 
             print(data)
                 # Perform data preprocessing
