@@ -12,7 +12,7 @@ print('hey there! I ran')
 ###############################################################################
 app = Flask(__name__)
 api = Api(app)
-CORS(app, resources={r"/send-email": {"origins": "*"}})
+CORS(app, resources={r"/send-email": {"origins": ["http://localhost:3000", "https://nextjs-flask-lime.vercel.app"]}})
 
 
 ###############################################################################
