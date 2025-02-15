@@ -12,13 +12,14 @@ print('hey there! I ran')
 ###############################################################################
 app = Flask(__name__)
 api = Api(app)
-CORS(app, resources={r"/send-email": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/send-email": {"origins": "*"}})
+
 
 ###############################################################################
 #                          Resend Configuration
 ###############################################################################
 # Set your Resend API key (ideally from environment variables in production):
-resend.api_key = "YOUR_RESEND_API_KEY_HERE"
+resend.api_key = "re_9ogVDcHs_JwNABUN8PUi1LuB1KtsW3kzN"
 
 # If you need to create an API Key (only once, usually in a setup script):
 # params: resend.ApiKeys.CreateParams = { "name": "Production" }
