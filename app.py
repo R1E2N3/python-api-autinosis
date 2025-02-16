@@ -7,7 +7,7 @@ import os
 import resend
 
 # Set the Resend API key (for production, store this in an environment variable)
-resend.api_key = os.environ.get("RESEND_API_KEY", "re_123456789")
+resend.api_key = os.environ.get("RESEND_API_KEY", "re_9ogVDcHs_JwNABUN8PUi1LuB1KtsW3kzN")
 
 print('hey there! I ran')
 
