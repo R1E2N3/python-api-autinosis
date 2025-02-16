@@ -62,8 +62,8 @@ class PredictAdult(Resource):
 
                 # If an Email field is provided, send the results via Resend
                 if "Email" in data and data["Email"]:
-                    subject = "Your Autism Test Results (Adult)"
-                    html_body = f"<p>Your test result is: <strong>{pred}%</strong></p>"
+                    subject = "Os resultados do seu teste de autismo. (Adulto)"
+                    html_body = f"Olá! Obrigado por usar Autinosis. <br/> <br/> <p>Seu resultado foi: <strong>{pred}%</strong></p>"
                     send_email_resend(data["Email"], subject, html_body)
 
                 return jsonify({"Result": pred})
@@ -89,8 +89,8 @@ class PredictChild(Resource):
 
             # Send email if provided
             if "Email" in data and data["Email"]:
-                subject = "Your Autism Test Results (Child)"
-                html_body = f"<p>Your test result is: <strong>{pred}%</strong></p>"
+                subject = "Os resultados do seu teste de autismo (Criança)"
+                html_body = f"Olá! Obrigado por usar Autinosis! <br/> <br/> <p>: <strong>{pred}%</strong></p>"
                 send_email_resend(data["Email"], subject, html_body)
 
             return jsonify({"Result": pred})
@@ -115,8 +115,8 @@ class PredictAdolescent(Resource):
 
                 # Send email if an Email field is provided
                 if "Email" in data and data["Email"]:
-                    subject = "Your Autism Test Results (Adolescent)"
-                    html_body = f"<p>Your test result is: <strong>{pred}%</strong></p>"
+                    subject = "Os resultados do seu teste de autismo. (Adolescent)"
+                    html_body = f"Olá! Obrigado por usar Autinosis! <br/> <br/> <p>Your test result is: <strong>{pred}%</strong></p>"
                     send_email_resend(data["Email"], subject, html_body)
 
                 return jsonify({"Result": pred})
