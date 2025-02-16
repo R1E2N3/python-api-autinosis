@@ -28,7 +28,7 @@ def send_email_resend(to_email, subject, html_body):
     Uses the Resend package to send an email.
     """
     params = {
-        "from": "Acme <onboarding@resend.dev>",  # This must be verified in your Resend account
+        "from": "renzohonorato.com",  # This must be verified in your Resend account
         "to": [to_email],
         "subject": subject,
         "html": html_body
